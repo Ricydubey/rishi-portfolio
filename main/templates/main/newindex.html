@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <!-- Correct static link to external CSS -->
+  <link rel="stylesheet" href="{% static 'main/css/newstyle.css' %}">
+
+  <!-- Google Fonts for typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">RiashTech.</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about/">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="overlay">
+    <header>
+      <h1>Welcome to RiashTech.</h1>
+      <p>Web Developer | Python Django | Freelancer</p>
+    </header>
+
+    <main>
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate web developer who loves building modern, user-friendly websites and applications using Python, Django, HTML, CSS, and JavaScript.
+        </p>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+          <div class="card">
+            <h3>Cab Booking System</h3>
+            <p>A Django project to manage cab bookings with user login, admin dashboard, and real-time updates.</p>
+          </div>
+          <div class="card">
+            <h3>Blog API</h3>
+            <p>A REST API for blog posts with JWT authentication and secure CRUD operations.</p>
+          </div>
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>This responsive site showcasing my work and skills, styled with CSS and enhanced for a clean user experience.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form action="/submit-form/" method="POST">
+          {% csrf_token %}
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+
+          <div class="button-group">
+            <button type="submit" class="responsive-button">Send Message</button>
+            <button type="button" class="responsive-button" onclick="downloadResume()">Download Resume</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div id="footertext">
+      Reach out if you want<br>to create Awesome<br>websites together<br><br>
+      <span>To see more of my work, visit my LinkedIn and GitHub:</span>
+      <hr>
+    </div>
+
+    <div id="socialicons">
+      <a target="_blank" href="https://www.linkedin.com/in/rishikantdwivedi042/"><i class="fa-brands fa-linkedin"></i></a>
+      <a target="_blank" href="https://www.instagram.com/riciofficial42/"><i class="fa-brands fa-instagram"></i></a>
+      <a target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-github"></i></a>
+      <a target="_blank" href="https://x.com/Ricyofficial42"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+
+    <div id="mail-phone"> 
+      <div><i class="fa-regular fa-envelope"></i> <a href="mailto:rishiduvey042@gmail.com">rishiduvey042@gmail.com</a></div>
+      <div><i class="fa-solid fa-phone"></i> <a href="tel:+918009463613">+91 8009463613</a></div>
+    </div>
+
+    <p style="margin-top: 1rem;">&copy; 2025 My Portfolio. All rights reserved. Designed by Rishi Dubey With &#9825;</p>
+  </footer>
+
+  <!-- JS File for interactivity -->
+  <script src="{% static 'main/js/index.js' %}"></script>
+  
+</body>
+</html>
