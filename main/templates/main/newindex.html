@@ -76,7 +76,7 @@
 
           <div class="button-group">
             <button type="submit" class="responsive-button">Send Message</button>
-            <button type="button" class="responsive-button" onclick="downloadResume()">Download Resume</button>
+            <button type="button" class="responsive-button" onclick="downloadResume(this)" data-resume-url="{% static 'main/resume.pdf' %}"> Download Resume</button>
           </div>
         </form>
       </section>
