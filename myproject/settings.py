@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['rishi-portfolio-wa3d.onrender.com']
 
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
