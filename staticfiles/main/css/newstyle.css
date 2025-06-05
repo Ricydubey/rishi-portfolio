@@ -22,12 +22,12 @@ body {
 =========================== */
 nav {
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* semi-transparent black */
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 999; /* ensures nav stays on top */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,6 +56,7 @@ nav ul li a:hover {
   color: #00adb5;
 }
 
+/* Toggle button for small screens */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -64,11 +65,11 @@ nav ul li a:hover {
 }
 
 /* ===========================
-   Overlay
+   Overlay for dark background
 =========================== */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 6rem 2rem 2rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* makes text readable */
+  padding: 6rem 2rem 2rem 2rem; /* extra top padding for fixed nav */
   min-height: 100vh;
 }
 
@@ -91,7 +92,7 @@ header p {
 }
 
 /* ===========================
-   Sections
+   Section Layout
 =========================== */
 main section {
   margin-bottom: 3rem;
@@ -103,6 +104,7 @@ h2 {
   text-align: center;
 }
 
+/* About Section */
 .about p {
   text-align: center;
   max-width: 800px;
@@ -111,7 +113,7 @@ h2 {
 }
 
 /* ===========================
-   Projects
+   Projects Section
 =========================== */
 .project-cards {
   display: flex;
@@ -121,7 +123,7 @@ h2 {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
   padding: 1rem;
   border-radius: 12px;
   width: 300px;
@@ -158,183 +160,142 @@ h2 {
   border-radius: 8px;
 }
 
-/* ===========================
-   Button Group (Responsive)
-=========================== */
+/* Contact Form Buttons */
 .button-group {
   display: flex;
-  flex-wrap: wrap;              /* Allow wrap on small screens */
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 0;
+  flex-wrap: nowrap; /* force single row */
 }
 
-.responsive-button {
-  flex: 1 1 auto;
-  padding: 0.8rem 1rem;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+.button-group button,
+.button-group .resume-btn {
+  flex: 1; /* equal width */
+  max-width: 220px; /* optional: control max size */
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
-  background-color: #007BFF;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
   text-align: center;
-
-  /* Ensure full text display */
-  white-space: normal !important;
-  overflow: visible !important;
-  text-overflow: unset !important;
-  word-break: break-word;
-  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
 }
 
 
-.responsive-button:hover {
-  background-color: #0056b3;
+.button-group button {
+  background-color: #00bcd4;
+}
+
+.button-group button:hover {
+  background-color: #0097a7;
+}
+
+.button-group .resume-btn {
+  background-color: #673ab7;
+}
+
+.button-group .resume-btn:hover {
+  background-color: #512da8;
 }
 
 /* ===========================
-   Footer
+   Footer Section
 =========================== */
 footer {
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 2rem;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2); /* fixes scrollbar offset */
   text-align: center;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  background: rgba(0, 0, 0, .9);
+  padding: 1rem;
+  color: #fff;
+}
+
+/* Footer text content */
+#footertext {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
 }
 
 #footertext span {
-  font-size: 0.9rem;
-  font-weight: 300;
+  display: block;
+  margin-top: 0.5rem;
 }
 
-#footertext hr {
-  margin: 1rem auto;
-  width: 60%;
-  border: 1px solid #00adb5;
+/* Social Icons */
+#socialicons {
+  margin-top: 1rem;
 }
 
 #socialicons a {
-  margin: 0 1rem;
-  color: #00adb5;
+  margin: 0 0.5rem;
+  color: #00bcd4;
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
 #socialicons a:hover {
-  color: #00838f;
+  transform: scale(1.2);
 }
 
+/* Email & Phone */
 #mail-phone {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-size: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-#mail-phone div a {
+#mail-phone i {
+  margin-right: 0.25rem;
+}
+
+#mail-phone a {
   color: #fff;
   text-decoration: none;
 }
 
-#mail-phone div a:hover {
-  text-decoration: underline;
-}
-
-
 /* ===========================
-   Footer text 
-=========================== */
-footer {
-  padding: 2rem;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-#footertext {
-  margin-bottom: 1rem;
-  font-size: clamp(0.9rem, 2vw, 1.2rem);  /* Fluid font size between min and max */
-  max-width: 700px;
-  min-width: 250px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-
-/* ===========================
-   Responsive Media Queries
+   Responsive Styles
 =========================== */
 @media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
+  /* Footer text smaller on mobile */
+  #footertext {
+    font-size: 0.9rem;
   }
 
-  nav ul.active {
-    display: flex;
+  #socialicons a {
+    font-size: 1.3rem;
   }
 
+  /* Show menu toggle and hide nav links by default */
   .menu-toggle {
     display: block;
   }
 
-  .project-cards {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     align-items: center;
-  }
-}
-
-@media (max-width: 400px) {
-  .responsive-button {
-    font-size: 0.9rem;
-    padding: 0.6rem;
+    display: none;
   }
 
-  header h1 {
-    font-size: 2rem;
+  nav ul.active { 
+    display: flex;
   }
-}
 
-
-@media (max-width: 768px) {
-  #mail-phone {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-size: .7rem;
-}
-  footer p{
-  font-size: .8rem;
-}
-}
-
-
-
-/* ===========================
-   Responsive Media Queries for Footer
-=========================== */
-@media (max-width: 515px) {
-  #footertext p{
-    font-size: .4rem;
-    padding: 0 1rem;
-  }
-}
-
-@media (min-width: 1000px) {
-  #footertext {
-    font-size:p 1.1rem;
+  nav ul li {
+    margin: 1rem 0;
   }
 }
