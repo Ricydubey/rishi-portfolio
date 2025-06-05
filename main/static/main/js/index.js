@@ -12,9 +12,15 @@ function downloadResume() {
   link.click();
   document.body.removeChild(link);
 
-  alert("Resume successfully downloaded!");
-}
+  // Show the toast
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
 
+  // Hide after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
 
 
 
