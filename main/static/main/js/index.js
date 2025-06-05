@@ -4,8 +4,8 @@ toggle.addEventListener('click', () => {
   links.classList.toggle('active');
 });
 
-function downloadResume(button) {
-  const resumeUrl = button.getAttribute('data-resume-url');
+function downloadResume() {
+  const resumeUrl = "{% static 'main/resume.pdf' %}";
   const link = document.createElement('a');
   link.href = resumeUrl;
   link.download = 'Resume.pdf';
@@ -13,10 +13,15 @@ function downloadResume(button) {
   link.click();
   document.body.removeChild(link);
 
-  // Simulate download completion and show success message
+  // Show custom popup
+  const popup = document.getElementById('download-popup');
+  popup.classList.remove('hidden');
+  popup.classList.add('show');
+
   setTimeout(() => {
-    alert("Resume successfully downloaded!");
-  }, 1500); // 1.5 seconds delay
+    popup.classList.remove('show');
+    popup.classList.add('hidden');
+  }, 3000); // hide after 3 seconds
 }
 
 

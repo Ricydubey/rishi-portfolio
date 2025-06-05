@@ -199,6 +199,30 @@ h2 {
 .button-group .resume-btn:hover {
   background-color: #512da8;
 }
+/* css for popup */
+.popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+
 
 /* ===========================
    Footer Section
