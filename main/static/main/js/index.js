@@ -5,24 +5,18 @@ toggle.addEventListener('click', () => {
 });
 
 function downloadResume() {
-  const resumeUrl = "{% static 'main/resume.pdf' %}";
   const link = document.createElement('a');
-  link.href = resumeUrl;
+  link.href = "{% static 'main/resume.pdf' %}";
   link.download = 'Resume.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 
-  // Show custom popup
-  const popup = document.getElementById('download-popup');
-  popup.classList.remove('hidden');
-  popup.classList.add('show');
-
-  setTimeout(() => {
-    popup.classList.remove('show');
-    popup.classList.add('hidden');
-  }, 3000); // hide after 3 seconds
+  alert("Resume successfully downloaded!");
 }
+
+
+
 
 
 // function downloadResume(button) {
