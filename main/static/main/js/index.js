@@ -12,4 +12,22 @@ function downloadResume(button) {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  // Simulate download completion and show success message
+  setTimeout(() => {
+    alert("Resume successfully downloaded!");
+  }, 1500); // 1.5 seconds delay
 }
+
+
+// function downloadResume(button) {
+//   const resumeUrl = button.getAttribute('data-resume-url');
+//   const link = document.createElement('a');
+//   link.href = resumeUrl;
+//   link.download = 'Resume.pdf';
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// }
+
+
